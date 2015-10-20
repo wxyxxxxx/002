@@ -1,0 +1,292 @@
+        <nav class="top1 navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+           
+            <div class="exit"><a href="/index.php/wxy/admin/lay_out">退出</a></div>
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <li>
+                            <a href="/index.php/home/index/index" target="_blank"><i class="fa fa-dashboard fa-fw nav_icon"></i>访问网站</a>
+                        </li>
+                                 <li>
+                                    <a href="/index.php/wxy/admin/w_list/table/nav/table2/nav_son">nav设置</a>
+                                </li>
+                                 <li>
+                                    <a href="/index.php/wxy/admin/w_list/table/kslx/table2/ks/sp/1">预约科室管理</a>
+                                </li>  
+                                  
+
+                              <!--    <li>
+                                    <a href="/index.php/wxy/admin/w_list/table/article/sp/1">关于博爱</a>
+                                </li>   -->
+                                
+                        <li>
+ <!-- 联系我们 -->                      <{section name=v max=1 start = 0 loop=$nav}>
+                            <a href="#"><i class="fa fa-laptop nav_icon"></i>
+                           <{$nav[v].navname}>
+                            <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                             
+   <!-- 开始-->                <{section name=n max=1 start = 0 loop=$nav[v].nav_son}>
+                                <li>
+                                    <a href="/index.php/wxy/admin/w_list/table/yybr">
+                               <{$nav[v].nav_son[n].navsonname}></a>
+                                </li>
+                                <{/section}> <{section name=n max=1
+						                   start = 1 loop=$nav[v].nav_son}>
+						<li><a href="/index.php/wxy/admin/w_list/table/ly/sp/1">
+								<{$nav[v].nav_son[n].navsonname}></a></li> 
+								<{/section}>
+						<{section name=n max=1 start = 2 loop=$nav[v].nav_son}>
+						<li><a href="/index.php/wxy/admin/w_list/table/lxwm">
+						<{$nav[v].nav_son[n].navsonname}></a></li><{/section}>
+<!-- 结束 -->
+						<!--  <li>
+                                    <a href="/index.php/wxy/admin/w_list/table/article/tid/<{$nav[v].id}>/sp/1">常见问题</a>
+                                </li>   -->
+					</ul>
+                            <{/section}>
+                              </li>
+                              <li>
+  <!-- 人才招聘 -->              <{section name=v max=1 start = 1 loop=$nav}>
+                            <a href="#"><i class="fa fa-laptop nav_icon"></i>
+                           <{$nav[v].navname}>
+                            <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                     <{section name=n max=1 start = 0 loop=$nav[v].nav_son}>
+                                <li>
+                                    <a href="/index.php/wxy/admin/w_list/table/article/tid/<{$nav[v].nav_son[n].id}>/sp/1">
+                               <{$nav[v].nav_son[n].navsonname}></a>
+                                </li>
+                                <{/section}> <{section name=n max=1
+						                   start = 1 loop=$nav[v].nav_son}>
+						<li><a href="/index.php/wxy/admin/join_list">
+								<{$nav[v].nav_son[n].navsonname}></a></li> 
+								<{/section}>
+                                                                                                                                                      
+                            </ul>
+                            <{/section}>
+                              </li>
+                                <li>
+  <!-- 就一知道 -->              <{section name=v max=1 start = 2 loop=$nav}>
+                            <a href="#"><i class="fa fa-laptop nav_icon"></i>
+                           <{$nav[v].navname}>
+                            <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+  <!-- 开始-->                 <{section name=n max=1 start = 0 loop=$nav[v].nav_son}>
+                                <li>
+                                    <a href="/index.php/wxy/admin/w_list/table/ditu/tid/<{$nav[v].nav_son[n].id}>">
+                               <{$nav[v].nav_son[n].navsonname}></a>
+                                </li>
+                                <{/section}> <{section name=n max=1
+						                   start = 1 loop=$nav[v].nav_son}>
+						<li><a href="/index.php/wxy/admin/w_list/table/article/tid/<{$nav[v].nav_son[n].id}>/sp/1">
+								<{$nav[v].nav_son[n].navsonname}></a></li> 
+								<{/section}>
+						<{section name=n max=1 start = 2 loop=$nav[v].nav_son}>
+						<li><a href="/index.php/wxy/admin/w_list/table/article/tid/<{$nav[v].nav_son[n].id}>/sp/1">
+						<{$nav[v].nav_son[n].navsonname}></a></li><{/section}>
+<!-- 结束 -->                                                            
+                            </ul>
+                            <{/section}>
+                              </li>
+                                     <li>
+   <!-- 健康天地 -->                      <{section name=v max=1 start = 3 loop=$nav}>
+                            <a href="#"><i class="fa fa-laptop nav_icon"></i>
+                           <{$nav[v].navname}>
+                            <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+ <!-- 开始-->                            <{section name=n max=1 start = 0 loop=$nav[v].nav_son}>
+                                <li>
+                                    <a href="/index.php/wxy/admin/w_list/table/article/tid/<{$nav[v].nav_son[n].id}>/sp/1">
+                               <{$nav[v].nav_son[n].navsonname}></a>
+                                </li>
+                                <{/section}> <{section name=n max=1
+						                   start = 1 loop=$nav[v].nav_son}>
+						<li><a href="/index.php/wxy/admin/w_list/table/article/tid/<{$nav[v].nav_son[n].id}>/sp/1">
+								<{$nav[v].nav_son[n].navsonname}></a></li> 
+								<{/section}>
+						<{section name=n max=1 start = 2 loop=$nav[v].nav_son}>
+						<li><a href="/index.php/wxy/admin/w_list/table/article/tid/<{$nav[v].nav_son[n].id}>/sp/1">
+						<{$nav[v].nav_son[n].navsonname}></a></li><{/section}>
+<!-- 结束 -->                                                        
+                            </ul>
+                            <{/section}>
+                              </li>
+                                     <li>
+   <!-- 名医荟萃 -->                      <{section name=v max=1 start = 4 loop=$nav}>
+                            <a href="#"><i class="fa fa-laptop nav_icon"></i>
+                           <{$nav[v].navname}>
+                            <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                         <{section name=n max=1 start = 0 loop=$nav[v].nav_son}>
+                                <li>
+                                    <a href="/index.php/wxy/admin/w_list/table/article/tid/<{$nav[v].nav_son[n].id}>/sp/1">
+                               <{$nav[v].nav_son[n].navsonname}></a>
+                                </li>
+                                <{/section}>                                                          
+                            </ul>
+                            <{/section}>
+                              </li>
+                                     <li>
+    <!-- 科室导航 -->                     <{section name=v max=1 start = 5 loop=$nav}>
+                            <a href="#"><i class="fa fa-laptop nav_icon"></i>
+                           <{$nav[v].navname}>
+                            <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+ <!-- 开始-->
+						<{section name=n max=1 start = 0 loop=$nav[v].nav_son}>
+						<li><a
+							href="/index.php/wxy/admin/w_list/table/article/tid/<{$nav[v].nav_son[n].id}>/sp/1">
+								<{$nav[v].nav_son[n].navsonname}></a></li> <{/section}>
+						<{section name=n max=1 start = 1 loop=$nav[v].nav_son}>
+						<li><a
+							href="/index.php/wxy/admin/w_list/table/article/tid/<{$nav[v].nav_son[n].id}>/sp/1">
+								<{$nav[v].nav_son[n].navsonname}></a></li> <{/section}>
+						<{section name=n max=1 start = 2 loop=$nav[v].nav_son}>
+						<li><a
+							href="/index.php/wxy/admin/w_list/table/article/tid/<{$nav[v].nav_son[n].id}>/sp/1>/sp/1">
+								<{$nav[v].nav_son[n].navsonname}></a></li><{/section}>
+						<!-- 结束 -->                                                         
+                            </ul>
+                            <{/section}>
+                              </li>
+                                     <li>
+    <!-- 新闻动态 -->                     <{section name=v max=1 start = 6 loop=$nav}>
+                            <a href="#"><i class="fa fa-laptop nav_icon"></i>
+                           <{$nav[v].navname}>
+                            <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+  <!-- 开始-->                            <{section name=n loop=$nav[v].nav_son}>
+                                <li>
+                                    <a href="/index.php/wxy/admin/w_list/table/article/tid/<{$nav[v].nav_son[n].id}>/sp/1">
+                               <{$nav[v].nav_son[n].navsonname}></a>
+                                </li>
+                                <{/section}> 
+<!-- 结束 -->                                                           
+                            </ul>
+                            <{/section}>
+                              </li>
+                                     <li>
+  <!-- 关于博爱 -->                   <{section name=v max=1 start = 7 loop=$nav}>
+                            <a href="#"><i class="fa fa-laptop nav_icon"></i>
+                           <{$nav[v].navname}>
+                            <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+  <!-- 开始-->                            <{section name=n max=1 start = 0 loop=$nav[v].nav_son}>
+                                <li>
+                                    <a href="/index.php/wxy/admin/w_list/table/article/tid/<{$nav[v].nav_son[n].id}>/sp/1">
+                               <{$nav[v].nav_son[n].navsonname}></a>
+                                </li>
+                                <{/section}> <{section name=n max=1 start = 1 loop=$nav[v].nav_son}>
+						<li><a href="/index.php/wxy/admin/w_list/table/article/tid/<{$nav[v].nav_son[n].id}>/sp/1">
+								<{$nav[v].nav_son[n].navsonname}></a></li> 
+								<{/section}>
+						<{section name=n max=1 start = 2 loop=$nav[v].nav_son}>
+						<li><a href="/index.php/wxy/admin/w_list/table/article/tid/<{$nav[v].nav_son[n].id}>/sp/1">
+						<{$nav[v].nav_son[n].navsonname}></a></li><{/section}>
+						<{section name=n max=1 start = 3 loop=$nav[v].nav_son}>
+						<li><a href="/index.php/wxy/admin/w_list/table/article/tid/<{$nav[v].nav_son[n].id}>/sp/1">
+						<{$nav[v].nav_son[n].navsonname}></a></li><{/section}>
+						<{section name=n max=1 start = 4 loop=$nav[v].nav_son}>
+						<li><a href="/index.php/wxy/admin/w_list/table/article/tid/<{$nav[v].nav_son[n].id}>/sp/1">
+						<{$nav[v].nav_son[n].navsonname}></a></li><{/section}>
+<!-- 结束 -->                                                        
+                            </ul>
+                            <{/section}>
+                              </li>
+                                   
+                                   
+                                   
+                                     <li>
+  <!-- 首页 -->                 
+                            <a href="/index.php/wxy/admin/w_list/table/img">首页图片
+                           </a>
+                          </li>
+                               <li>
+                            <a href="/index.php/wxy/admin/w_list/table/vf/sp/1">
+                                                                             视频控制
+                              </a>
+                                 </li>
+                                                          
+                            
+                              
+                                <!--  <li>
+                                    <a href="/index.php/wxy/admin/w_list/table/text/tid/2/">带身</a>
+                                </li>  
+
+                                 <li>
+                                    <a href="/index.php/wxy/admin/w_list/table/text/tid/3/">扣头</a>
+                                </li>  
+                                 <li>
+                                    <a href="/index.php/wxy/admin/w_list/table/tuji/sp/1/table2/tuji2/">图集</a>
+                                </li>  
+                                 <li>
+                                    <a href="/index.php/wxy/admin/edit/table/parameter/id/1">参数</a>
+                                </li> 
+
+
+
+                        <li>
+                            <a href="#"><i class="fa fa-laptop nav_icon"></i>换新保障<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="/index.php/wxy/admin/edit/table/change/id/1">换新保障</a>
+                                </li>
+                                 <li>
+                                    <a href="<{$url}>/index.php/wxy/admin/w_list/table/question/sp/1/">常见问题</a>
+                                </li>                                                              
+                            </ul>
+                              </li>
+                                 <li>
+                                    <a href="/index.php/wxy/admin/w_list/table/g/table2/h/sp/1/tid/1">帮助中心</a>
+                                </li> 
+                                 <li>
+                                    <a href="/index.php/wxy/admin/w_list/table/g/table2/h/sp/1/tid/2">关于九米客JOMEKE</a>
+                                </li> 
+
+                                 <li>
+                                    <a href="/index.php/wxy/admin/w_list/table/article/table2/cc/sp/1/">新闻列表</a>
+                                </li>
+                                
+                                   <li>
+                                    <a href="/index.php/wxy/admin/w_list/table/article/table2/cc/sp/1/">新闻列表</a>
+                                </li>                              
+                                
+                           <li>
+                            <a href="#"><i class="fa fa-laptop nav_icon"></i>加入我们<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level"> 
+
+                                  <li>
+                                    <a href="/index.php/wxy/admin/w_list/table/job/sp/1/">职位设置</a>
+                                </li>                                
+                                 <li>
+                                    <a href="/index.php/wxy/admin/join_list">申请列表</a>
+                                </li> 
+                                </ul>
+                              </li>
+
+                                 <li>
+                                    <a href="/index.php/wxy/admin/w_list/table/article/table2/cc/sp/1/">联系我们</a>
+                                </li> 
+ -->
+                       
+
+
+                        <li>
+
+                        </li>
+                       
+
+                     
+                     
+                                <li>
+                                    <a href="/index.php/wxy/admin/edit/table/set/id/1/sw/1">网站设置</a>
+                                </li>
+
+
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>

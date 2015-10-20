@@ -1,0 +1,65 @@
+
+<{include file="common_head.html"}>
+
+<script>
+$(function(){
+	
+	$('.right').kkPages({
+		
+		PagesClass:'dl', //需要分页的元素
+		PagesMth:10, //每页显示个数		
+		PagesNavMth:5, //显示导航个数
+		});
+});
+</script>
+
+<!--��������-->
+<div class="mainbox">
+	<div class="main">
+    	<ul class="mainone">
+        	<li>您现在的位置:<a class="one" href="index">首页</a></li>
+        </ul>
+        <ul class="maintwo">
+        <li class="left"><{section name=v loop=$about}> 
+        <{if $id eq $about[v].id}>
+				<div class="current1">
+					<a href="/index.php/home/index/tesezhenliao/tid/6/id/<{$about[v].id}>">
+						<{$about[v].navsonname}></a>
+				</div> <{else}>
+				<div>
+					<a href="/index.php/home/index/tesezhenliao/tid/6/id/<{$about[v].id}>">
+						<{$about[v].navsonname}></a>
+				</div> <{/if}> <{/section}>
+			</li>
+            <li class="right">
+              <{if $id eq 13}>
+               <{section name=v loop=$tszl}>
+               <link href="<{$templets}>/index/css/tesezhenliao.css" rel="stylesheet" type="text/css">
+            	<dl>
+                	<dd><a href="/index.php/home/index/tszlxq/tid/6/id/<{$id}>/nid/<{$tszl[v].id}>"><img src="<{$tszl[v].t3}>"></a></dd>
+                    <dt><a href="/index.php/home/index/tszlxq/tid/6/id/<{$id}>/nid/<{$tszl[v].id}>"><{$tszl[v].t1}></a></dt>
+                </dl>
+                <{/section}>
+                <{else}>
+                <link href="<{$templets}>/index/css/news.css" rel="stylesheet" type="text/css">
+                <li class="right">
+                <{section name=v loop=$tszl}>
+				<dl>
+					<dd>
+						<h2>
+							<a href="/index.php/home/index/tszlxq/tid/6/id/<{$id}>/nid/<{$tszl[v].id}>"><{$tszl[v].t1}></a>
+						</h2>
+						<span><{$tszl[v].c_time|date_format:'%Y-%m-%d'}></span>
+					</dd>
+					<dt><{$tszl[v].t2|truncate:100:"......"}></dt>
+				</dl> <{/section}>
+
+                
+              <{/if}>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--footer-->
+<{include file="common_foot.html"}>

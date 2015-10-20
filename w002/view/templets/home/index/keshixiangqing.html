@@ -1,0 +1,306 @@
+<{include file="common_head.html"}>
+<link href="<{$templets}>/index/css/keshi-xiangqing.css" rel="stylesheet" type="text/css">
+<!--主体区域-->
+<div class="mainbox">
+	<div class="main">
+    	<ul class="mainone">
+        	<li>您现在的位置:<a class="one" href="index.html">首页</a>&nbsp;>&nbsp;<a class="two" href="index.html">科室导航</a>&nbsp;>&nbsp;<span>临床科室</span></li>
+        </ul>
+        <ul class="maintwo">
+        		<li class="left"><{section name=v loop=$about}> <{if $id eq
+				$about[v].id}>
+				<div class="current1">
+					<a class="wsp" href="/index.php/home/index/keshi/tid/6/id/<{$about[v].id}>">
+						<{$about[v].navsonname}></a>
+				</div> <{else}>
+				<div>
+					<a href="/index.php/home/index/keshi/tid/6/id/<{$about[v].id}>">
+						<{$about[v].navsonname}></a>
+				</div> <{/if}> <{/section}>
+			</li>
+            <li class="right">
+            	<h2><{$ksxq.t1}></h2>
+                <P><{$ksxq.t2}></P>
+        </ul>
+    </div>
+</div>
+
+<!--footer-->
+<div class="footerbox">
+<div class="line"></div>
+<div class="dizhi">
+	<p>遵义市博爱医院  版权所有  Copyright 2015-2020 All Rights Reserved</p>
+    <p>医院地址：遵义市xxxxx路xxx号    邮编：xxxxxx   联系电话：0371-12345678</p>
+    <p><a href="www.cccuu.com">技术支持：灵秀网络科技</a></p>
+</div>
+</div>
+
+
+
+
+<!--客服-->
+<div class="lanrenzhijia_m">
+	<ul>
+        <a href="javascript:;" class="close"></a>
+		<a href="" style="left:145px;"></a>
+    	<a class="shao" style="left:235px;"></a>
+    </ul>
+</div>
+<style>
+.lanrenzhijia_m{ width:315px; height:145px; background:url(images/invite_bg.png) no-repeat; position:fixed; left:50%; top:50%; margin:-72px 0 0 -157px; display:none;}
+.lanrenzhijia_m ul .close{ width:25px; height:25px; display:block; position:absolute; right:0; top:0;}
+.lanrenzhijia_m ul{width:315px; height:145px; position:relative;}
+.lanrenzhijia_m ul a{ display:block; width:70px; height:22px; position:absolute; top:104px;}
+</style>
+
+<script>
+$(function(){
+	$('.lanrenzhijia_m').delay(2000).slideDown();
+	$('.lanrenzhijia_m .close,.shao').click(function(){
+		$('.lanrenzhijia_m').slideUp();
+	});
+});
+</script>
+
+<div class="fixed_box" id="fixedBox">
+    <div class="content_box">
+        <div class="content_inner">
+        	<div class="close_btn"><a title="关闭"><span>关闭</span></a></div>
+            <div class="content_title"><span>客服中心</span></div>
+            <div class="content_list">            	
+                <div class="qqserver">
+                    <p>                              
+                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=1690704269&amp;site=qq&amp;menu=yes">
+                          <img border="0" src="http://wpa.qq.com/pa?p=2:1690704269:41" alt="点击这里给我发消息" title="点击这里给我发消息">
+                          <span>方雨</span>
+                    	</a>
+                    </p>
+                    <p>
+                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1690704269&site=qq&menu=yes">
+                          <img border="0" src="http://wpa.qq.com/pa?p=2:1690704269:41" alt="点击这里给我发消息" title="点击这里给我发消息">
+                          <span>方雨</span>
+                    	</a>
+                    </p>
+                    <p>
+                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1690704269&site=qq&menu=yes">
+                          <img border="0" src="http://wpa.qq.com/pa?p=2:1690704269:41" alt="点击这里给我发消息" title="点击这里给我发消息">
+                          <span>方雨</span>
+                    	</a>
+                    </p>       
+                    <p>                        
+                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1690704269&site=qq&menu=yes">
+                          <img border="0" src="http://wpa.qq.com/pa?p=2:1690704269:41" alt="点击这里给我发消息" title="点击这里给我发消息">
+                          <span>方雨</span>
+                    	</a>
+                    </p>
+                              
+                </div>               
+                <hr>
+                <div class="phoneserver">
+                    <h5>客户服务热线</h5>
+                    <p style="text-align:center; color:#238dd2; font-weight:bold;">0851—28629968</p>
+                </div>
+                <hr>
+                <div class="msgserver">
+                    <p><a href="zaixianliuyan.html">给我们留言</a></p>
+                </div>
+            </div>
+            <div class="content_bottom"></div>
+        </div>
+    </div>
+    <div class="show_btn"><span>展开客服</span></div>
+</div>
+
+</body>
+<script type="text/javascript">
+    //�����ͳ�ʼ����ͼ������
+    function initMap(){
+        createMap();//������ͼ
+        setMapEvent();//���õ�ͼ�¼�
+        addMapControl();//���ͼ��ӿؼ�
+        addMarker();//���ͼ�����marker
+    }
+    
+    //������ͼ������
+    function createMap(){
+        var map = new BMap.Map("dituContent");//�ڰٶȵ�ͼ�����д���һ����ͼ
+        var point = new BMap.Point(106.926641,27.712113);//����һ�����ĵ�����
+        map.centerAndZoom(point,17);//�趨��ͼ�����ĵ�����겢����ͼ��ʾ�ڵ�ͼ������
+        window.map = map;//��map�����洢��ȫ��
+    }
+    
+    //��ͼ�¼����ú�����
+    function setMapEvent(){
+        map.enableDragging();//���õ�ͼ��ק�¼���Ĭ������(�ɲ�д)
+        map.enableScrollWheelZoom();//���õ�ͼ���ַŴ���С
+        map.enableDoubleClickZoom();//�������˫���Ŵ�Ĭ������(�ɲ�д)
+        map.enableKeyboard();//���ü����������Ҽ��ƶ���ͼ
+    }
+    
+    //��ͼ�ؼ���Ӻ�����
+    function addMapControl(){
+        //���ͼ��������ſؼ�
+	var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+	map.addControl(ctrl_nav);
+        //���ͼ���������ͼ�ؼ�
+	var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+	map.addControl(ctrl_ove);
+        //���ͼ����ӱ����߿ؼ�
+	var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+	map.addControl(ctrl_sca);
+    }
+    
+    //��ע������
+    var markerArr = [{title:"遵义市博爱医院",content:"乘车路线：15路、30路",point:"106.926928|27.712225",isOpen:1,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		 ];
+    //����marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+			var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+			var iw = createInfoWindow(i);
+			var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+			marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"#808080",
+                        color:"#333",
+                        cursor:"pointer"
+            });
+			
+			(function(){
+				var index = i;
+				var _iw = createInfoWindow(i);
+				var _marker = marker;
+				_marker.addEventListener("click",function(){
+				    this.openInfoWindow(_iw);
+			    });
+			    _iw.addEventListener("open",function(){
+				    _marker.getLabel().hide();
+			    })
+			    _iw.addEventListener("close",function(){
+				    _marker.getLabel().show();
+			    })
+				label.addEventListener("click",function(){
+				    _marker.openInfoWindow(_iw);
+			    })
+				if(!!json.isOpen){
+					label.hide();
+					_marker.openInfoWindow(_iw);
+				}
+			})()
+        }
+    }
+    //����InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //����һ��Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    
+    initMap();//�����ͳ�ʼ����ͼ
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

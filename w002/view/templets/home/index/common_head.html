@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><{$set_list.s1}></title>
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML,CSS,JavaScript">
+<link href="<{$templets}>/index/css/base.css" rel="stylesheet" type="text/css">
+
+
+<link href="<{$templets}>/index/css/Css.css" rel="stylesheet" type="text/css">
+<link href="<{$templets}>/index/css/service.css" rel="stylesheet" type="text/css">
+
+<script src="<{$templets}>/index/js/jquery-1.8.3.min.js"></script>
+<script src="<{$templets}>/index/js/jquery.SuperSlide.2.1.1.source.js"></script>
+<script src="<{$templets}>/index/js/jquery.kkPages.js"></script>
+<script src="<{$templets}>/index/js/base.js"></script>
+<script src="<{$templets}>/index/js/jquery.fixed.1.5.1.js"></script>
+
+</head>
+
+<body>
+<div id="weather">
+	<img class="cloud" src="<{$templets}>/index/images/cloud.png" width="300">
+</div>
+<div id="weather1">
+	<img class="cloud" src="<{$templets}>/index/images/cloud.png" width="300">
+</div>
+<!--TOP开始-->
+
+<div class="topbox">
+	<div><img src="<{section name=v   max=1 start = 0 loop=$img}><{$img[v].img_url}><{/section}>"></div>
+</div>
+
+<!--nav开始-->
+<div class="navbox">
+  
+	<ul class="nav"><{section name=v loop=$nav}>
+    	<li class="lianxi"><a href="/index.php/home/index/daohang/tid/<{$nav[v].id}>"><{$nav[v].navname}></a>
+        	<dl>
+        	<{section name=n loop=$nav[v].nav_son}>
+            	<dd><a href="/index.php/home/index/daohang/tid/<{$nav[v].nav_son[n].tid}>/id/<{$nav[v].nav_son[n].id}>/"><{$nav[v].nav_son[n].navsonname}></a></dd>
+            	<{/section}>
+                
+            </dl> 
+        </li>
+       
+  <{/section}>
+    </ul>
+  
+</div>
+
+<!--搜索开始-->
+<div class="searchbox">
+	<ul class="search">
+    	<li class="date"><b>今天是：</b><!-- <{time()|date_format:'%Y-%m-%d %H:%M:%S'}> --><{time()|date_format:'%Y年%m月%d号 %H时%M分'}></li>
+        <li class="sinput">
+        	<input placeholder="请输入关键词" type="text">
+            <a href="/index.php/home/index/sousuojieguo"></a>
+        </li>
+    </ul>
+</div>
+
+<!--广告位-->
+<div class="guanggaobox">
+	<div><img src="<{section name=v   max=1 start = 1 loop=$img}><{$img[v].img_url}><{/section}>"></div>
+</div>

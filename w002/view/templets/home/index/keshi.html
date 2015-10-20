@@ -1,0 +1,80 @@
+<{include file="common_head.html"}>
+<link href="<{$templets}>/index/css/keshi.css" rel="stylesheet" type="text/css">
+<style type="text/css"> 
+ .txt { 
+height: 24px;border-left:solid 5px; color:#238dd2;font-size: 16px;color: #238dd2;line-height: 24px;font-weight: bold;padding-left: 6px;
+}  
+</style> 
+
+
+<!--��������-->
+<div class="mainbox">
+	<div class="main">
+    	<ul class="mainone">
+        	<li>您现在的位置:<a class="one" href="">首页</a></li>
+        </ul>
+        <ul class="maintwo">
+        		<li class="left"><{section name=v loop=$about}> <{if $id eq
+				$about[v].id}>
+				<div class="current1">
+					<a class="wsp" href="/index.php/home/index/keshi/tid/4/id/<{$about[v].id}>">
+						<{$about[v].navsonname}></a>
+				</div> <{else}>
+				<div>
+					<a href="/index.php/home/index/keshi/tid/4/id/<{$about[v].id}>">
+						<{$about[v].navsonname}></a>
+				</div> <{/if}> <{/section}>
+			</li>
+            <li class="right">
+          
+            	<div>
+                	<h3 id="demo"></h3>
+                	 
+                    <p>
+                           <{section name=v loop=$keshi}>
+                    	<a href="/index.php/home/index/ksxq/tid/4/id/<{$id}>/nid/<{$keshi[v].id}>"><{$keshi[v].t1}></a>
+                    	 <{/section}>
+                     </p>
+                     
+                </div>
+              
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+window.onload = function()
+{   var topMenus = getClass('a','wsp');
+    for(var i=0;i < topMenus.length; i++)
+    {
+    	 document.getElementById("demo").innerHTML =topMenus[i].innerHTML;//改变值      
+    	/*  var guding = document.getElementById ('1');
+    	 guding.style.color ='red'; */
+    	 
+            }
+}
+function getClass(tagName,className) //获得标签名为tagName,类名className的元素
+{
+    if(document.getElementsByClassName) //支持这个函数
+    {        return document.getElementsByClassName(className);
+    }
+    else
+    {       var tags=document.getElementsByTagName(tagName);//获取标签
+        var tagArr=[];//用于返回类名为className的元素
+        for(var i=0;i < tags.length; i++)
+        {
+            if(tags[i].class == className)
+            {
+                tagArr[tagArr.length] = tags[i];//保存满足条件的元素
+            }
+        }
+        return tagArr;
+    }
+  
+} 
+
+</script>
+<!--footer-->
+<{include file="common_foot.html"}>

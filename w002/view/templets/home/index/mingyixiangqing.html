@@ -1,0 +1,27 @@
+<{include file="common_head.html"}>
+<!--主体区域-->
+<link href="<{$templets}>/index/css/mingyi-xiangqing.css" rel="stylesheet" type="text/css">
+
+
+
+<!--��������-->
+<div class="mainbox">
+	<div class="main">
+    	<ul class="mainone">
+        	<li>您现在的位置:<a class="one" href="index.html">首页</a>&nbsp;>&nbsp;<a class="two" href="index.html">科室导航</a>&nbsp;>&nbsp;<span>临床科室</span></li>
+        </ul>
+        <ul class="maintwo">
+        	<li class="left">
+            	<div class="current1"><a href="#">名医荟萃</a></div>
+            </li>
+             <li class="right">
+            	<h2><{$myxq.t1}></h2>
+                <p>作者：<{$myxq.t5}></p>
+                <{$myxq.t2}>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--footer-->
+<{include file="common_foot.html"}>

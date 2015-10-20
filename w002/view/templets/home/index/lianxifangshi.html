@@ -1,0 +1,35 @@
+<{include file="common_head.html"}>
+<!--主体区域-->
+<link href="<{$templets}>/index/css/lianxifangshi.css" rel="stylesheet" type="text/css">
+
+<!--��������-->
+<div class="mainbox">
+	<div class="main">
+    	<ul class="mainone">
+        	<li>您现在的位置:<a class="one" href="index.html">首页</a>&nbsp;>&nbsp;<a class="two" href="index.html">科室导航</a>&nbsp;>&nbsp;<span>临床科室</span></li>
+        </ul>
+        <ul class="maintwo">
+        	<li class="left">
+            <{section name=v loop=$about}>
+        	<{if $id eq $about[v].id}> 
+            <div  class="current1"  > 
+            <a href="/index.php/home/index/yuyue/tid/9/id/<{$about[v].id}>"> <{$about[v].navsonname}></a></div>
+            <{else}> <div><a href="/index.php/home/index/yuyue/tid/9/id/<{$about[v].id}>"> <{$about[v].navsonname}></a>
+             </div>
+             <{/if}>
+            <{/section}>
+            </li>
+            <li class="right">
+            	<div class="ll">
+                	<h3>联系我们</h3>
+                </div>
+                <div class="zz">
+                	<p><{$lxfs.content}></p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--footer-->
+<{include file="common_foot.html"}>

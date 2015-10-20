@@ -1,0 +1,48 @@
+<{include file="common_head.html"}>
+<link href="<{$templets}>/index/css/news-xiangqing.css" rel="stylesheet" type="text/css">
+
+
+<!--��������-->
+<div class="mainbox">
+	<div class="main">
+    	<ul class="mainone">
+        	<li>您现在的位置:<a class="one" href="index">首页</a></span></li>
+        </ul>
+        <ul class="maintwo">
+        	<li class="left">
+            <{section name=v loop=$about}>
+        	<{if $id eq $about[v].id}> 
+            <div  class="current1"  > 
+            <a href="/index.php/home/index/news/tid/3/id/<{$about[v].id}>"> <{$about[v].navsonname}></a></div>
+            <{else}> <div><a href="/index.php/home/index/news/tid/3/id/<{$about[v].id}>"> <{$about[v].navsonname}></a>
+             </div>
+             <{/if}>
+            <{/section}>
+            </li>
+            <li class="right">
+           	 	<h2><{$nsq.t1}></h2>
+                <div>来源：<{$nsq.t5}><span>发布时间：<{$nsq.c_time|date_format:'%Y-%m-%d'}></span><b></b></div>
+                  <{$nsq.t2}>
+	<p></p>  
+                 <{if $prev.id neq ""}>
+					<a class="shang" href="/index.php/home/index/newsxqy/tid/3/id/<{$id}>/nid/<{$prev.id}>"><b>上一篇:<{$prev.t1}></b></a>
+					<{else}>
+					<a href="javascript:void(0)">
+					
+					<a calss="xia" href="javascript:void(0)"><b>没有了</b></a>					
+					<{/if}>
+					<{if $next.id neq ""}>
+					<a calss="xia" href="/index.php/home/index/newsxqy/tid/3/id/<{$id}>/nid/<{$next.id}>"><b>下一篇:<{$next.t1}></b></a>
+					<a href="/index.php/home/index/news_detail/id/<{$next.id}>/"></a>
+					<{else}>
+					<a calss="xia" href="javascript:void(0)"><b>没有了</b></a>
+					<a href="javascript:void(0)"><img class="next"></a>				
+					<{/if}> 
+          </li>
+          
+        </ul>
+    </div>
+</div>
+
+<!--footer-->
+<{include file="common_foot.html"}>

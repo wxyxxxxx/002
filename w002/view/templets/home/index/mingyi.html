@@ -1,0 +1,39 @@
+<{include file="common_head.html"}>
+<!--主体区域-->
+<link href="<{$templets}>/index/css/mingyi.css" rel="stylesheet" type="text/css">
+<script>
+
+$(function(){
+	
+	$('.right').kkPages({
+		
+		PagesClass:'dl', //需要分页的元素
+		PagesMth:6, //每页显示个数		
+		PagesNavMth:5, //显示导航个数
+		});
+});
+</script>
+<!--��������-->
+<div class="mainbox">
+	<div class="main">
+    	<ul class="mainone">
+        	<li>您现在的位置:<a class="one" href="index.html">首页</a></li>
+        </ul>
+        <ul class="maintwo">
+        	<li class="left">
+            	<div class="current1"><a href="#">名医荟萃</a></div>
+            </li>
+            <li class="right">
+            <{section name=v loop=$mingyi}>
+            	<dl>
+                	<dd><a href="/index.php/home/index/myxq/tid/5/nid/<{$mingyi[v].id}>"><img src="<{$mingyi[v].t3}>"></a></dd>
+                    <dt><a href="/index.php/home/index/myxq/tid/5/nid/<{$mingyi[v].id}>"><{$mingyi[v].t1}></a></dt>
+                </dl>
+                <{/section}>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--footer-->
+<{include file="common_foot.html"}>

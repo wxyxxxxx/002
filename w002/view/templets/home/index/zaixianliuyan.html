@@ -1,0 +1,36 @@
+<{include file="common_head.html"}>
+<link href="<{$templets}>/index/css/zaixianliuyan.css" rel="stylesheet" type="text/css">
+
+<!--��������-->
+<div class="mainbox">
+	<div class="main">
+    	<ul class="mainone">
+        	<li>您现在的位置:<a class="one" href="index.html">首页</a>&nbsp;>&nbsp;<a class="two" href="index.html">科室导航</a>&nbsp;>&nbsp;<span>临床科室</span></li>
+        </ul>
+        <ul class="maintwo">
+        	<li class="left">
+            <{section name=v loop=$about}>
+        	<{if $id eq $about[v].id}> 
+            <div  class="current1"  > 
+            <a href="/index.php/home/index/yuyue/tid/9/id/<{$about[v].id}>"> <{$about[v].navsonname}></a></div>
+            <{else}> <div><a href="/index.php/home/index/yuyue/tid/9/id/<{$about[v].id}>"> <{$about[v].navsonname}></a>
+             </div>
+             <{/if}>
+            <{/section}>
+            </li>
+            <li class="right">
+            	<div class="ll">
+                	<h3>在线留言</h3>
+                </div>
+                   <form action="/index.php/home/index/ly" method="post">
+                <dl><dt>姓名</dt><dd><input name="name"></dd></dl>
+                <dl><dt>联系电话</dt><dd><input name="tel"></dd></dl>
+                <dl><dt>留言内容</dt><dd><textarea nama="conten"></textarea></dd></dl>
+                <button>提交</button>
+                </form>>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--footer--><{include file="common_foot.html"}>

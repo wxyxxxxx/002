@@ -1,0 +1,225 @@
+﻿<{include file="common_head.html"}>
+<!--主体区域-->
+<link href="<{$templets}>/index/css/index.css" rel="stylesheet" type="text/css">
+<div class="mainbox">
+	<div class="main">
+        <div class="mainleft">
+            <div class="ntittle">
+                <h2>新闻动态</h2>
+                <a href="/index.php/home/index/news">更多>></a>
+            </div>
+            <div class="bannerbox">
+                <div class="bannerimg">          
+           	        <{section name=v loop=$newtp}>
+                    <a href="<{$newtp[v].id}>"><img src="<{$newtp[v].t3}>" alt=""></a>
+                     <{/section}>
+                </div>
+                <div class="biaoyu">
+                	<p>爱心传递 播散希望</p>
+                    <div class="hd">
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                    </div>
+                </div>
+                
+			<script>
+                jQuery(".bannerbox").slide({mainCell:".bannerimg",titCell:".hd span",delayTime:1500,trigger:"click",autoPlay:true});
+            </script> 
+            </div>
+            <div class="text">
+            	<dl class="neirong">
+            	 <{section name=v loop=$news_list}>
+                    <dd><a href="{$news_list[v].id}>">&nbsp;<{$news_list[v].t1}></a><a href="#">
+                    <{$news_list[v].c_time|date_format:'%Y-%m-%d'}></a></dd>
+                    <{/section}>
+           	   </dl>
+            </div>
+        </div>
+        <div class="mainright">
+        	<div class="stittle">
+                <h2>视频专区</h2>
+                <a href="/index.php/home/index/vf">更多>></a>
+            </div>
+            <div class="text1">
+            	<dl class="neirong1">
+            	<{section name=v loop=$vf}>
+                    <dd><a href="<{$vf[v].vf}>"  target="view_window" >&nbsp;<{$vf[v].vft}></a><a class="aa" href="<{$vf[v].vf}>">
+                    <{$vf[v].c_time|date_format:'%Y-%m-%d'}></a></a></dd>
+                  <{/section}>
+           	   </dl>
+            </div>
+            <div class="yuyue"><a href="/index.php/home/index/lianxi"><img src="<{$templets}>/index/images/p4.jpg"></a></div>
+            <div class="woyao"><a href="/index.php/home/index/zaixianliuyan"><img src="<{$templets}>/index/images/p5.jpg"></a></div>
+        </div>
+    </div>
+</div>
+
+<!--广告位-->
+<div class="guanggao1">
+	<img src="<{section name=v   max=1 start = 2 loop=$img}><{$img[v].img_url}><{/section}>">
+</div>
+
+<!--名医荟萃-->
+<div class="mingyibox">
+	<div class="mingyi">
+    	<div class="mingleft">
+        	<div class="ntittle">
+                <h2><{section name=v   max=1 start = 4 loop=$nav}><{$nav[v].navname}><{/section}></h2>
+                <a href="/index.php/home/index/mingyi">更多>></a>
+            </div>
+            <div class="bbbox">
+                   <!-- <{section name=v loop=$vf}>
+                    <dd><a href="<{$vf[v].vf}>"  target="view_window" >&nbsp;<{$vf[v].vft}></a><a class="aa" href="<{$vf[v].vf}>">
+                    <{$vf[v].c_time|date_format:'%Y-%m-%d'}></a></a></dd>
+                  <{/section}> -->
+            	<ul>
+            		<{section name=v loop=$my_list}>
+                	<li>
+                    	<div><a href="<{$my_list[v].id}>"><img src="<{$my_list[v].t3}>"></a></div>
+                        <p><a href="<{$my_list[v].id}>"><{$my_list[v].t1}></a></p>
+                    </li>
+                    <{/section}>
+                
+                </ul>
+                <script>jQuery(".bbbox").slide({mainCell:"ul",autoPlay:true,effect:"leftMarquee",vis:7,interTime:50,trigger:"click"});</script>
+            </div>
+        </div>
+        <div class="mingright">
+        	<div class="ntittle">
+                <h2>患者心声</h2>
+            </div>
+            <div class="bannerbox1">
+                <div class="bannerimg1">
+                    <a href=""><img src="<{$templets}>/index/images/p3.jpg" alt=""></a>
+                    <a href=""><img src="<{$templets}>/index/images/p3.jpg" alt=""></a>
+                    <a href=""><img src="<{$templets}>/index/images/p3.jpg" alt=""></a>
+                </div>
+                <div class="biaoyu">
+                	<p>爱心传递 播散希望</p>
+                    <div class="hd">
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                    </div>
+                </div>
+			<script>
+                jQuery(".bannerbox1").slide({mainCell:".bannerimg1",titCell:".hd span",delayTime:1500,trigger:"click",autoPlay:true});
+            </script> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--院务公开-->
+<div class="yuanwubox">
+	<div class="yuanwu">
+    	<ul>
+        	<li class="ntittle">
+                <h2>院务公开</h2>
+            </li>
+            <li class="wenzhang">
+            	<img src="<{section name=v   max=1 start = 3 loop=$img}><{$img[v].img_url}><{/section}>">
+                <dl class="neirong1">
+                    <dd><a class="bb" href="news-xiangqing.html">博美医院风貌博美医院风貌博美医院风貌</a><a class="aa" href="#">2015-05-12</a></dd>
+                    <dd><a class="bb" href="news-xiangqing.html">博美医院风貌</a><a class="aa" href="#">2015-05-12</a></dd>
+                    <dd><a class="bb" href="news-xiangqing.html">博美医院风貌</a><a class="aa" href="#">2015-05-12</a></dd>
+                    <dd><a class="bb" href="news-xiangqing.html">博美医院风貌</a><a class="aa" href="#">2015-05-12</a></dd>
+                    <dd><a class="bb" href="news-xiangqing.html">博美医院风貌</a><a class="aa" href="#">2015-05-12</a></dd>
+                    <dd><a class="bb" href="news-xiangqing.html">博美医院风貌</a><a class="aa" href="#">2015-05-12</a></dd>
+                    <dd><a class="bb" href="news-xiangqing.html">博美医院风貌</a><a class="aa" href="#">2015-05-12</a></dd>
+           	   </dl>
+            </li>
+        </ul>
+        <ul>
+        	<li class="ntittle">
+                <h2><{section name=v   max=1 start = 1 loop=$nav}><{$nav[v].navname}><{/section}></h2>
+            </li>
+            <li class="wenzhang">
+            	<img src="<{section name=v   max=1 start = 4 loop=$img}><{$img[v].img_url}><{/section}>">
+                <dl class="neirong1">
+            
+                    <{section name=v loop=$job_new}>
+                    <dd><a class="bb" href="<{$job_new[v].id}>"><{$job_new[v].t1}></a>
+                    <a class="aa" href="<{$job_new[v].id}>"><{$job_new[v].c_time|date_format:'%Y-%m-%d'}></a></dd>
+                      <{/section}>
+           	   </dl>
+            </li>
+        </ul>
+        <ul>
+        	<li class="ntittle">
+                <h2><{section name=v   max=1 start = 3 loop=$nav}><{$nav[v].navname}><{/section}></h2>
+            </li>
+            <li class="wenzhang">
+            	<img src="<{section name=v   max=1 start = 5 loop=$img}><{$img[v].img_url}><{/section}>">
+                <dl class="neirong1">
+                     <{section name=v loop=$jk}>
+                    <dd><a class="bb" href="<{$jk[v].id}>"><{$jk[v].t1}></a>
+                    <a class="aa" href="<{$jk[v].id}>"><{$jk[v].c_time|date_format:'%Y-%m-%d'}></a></dd>
+                      <{/section}>
+           	   </dl>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!--footer-->
+<{include file="common_foot.html"}>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
